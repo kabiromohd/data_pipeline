@@ -9,13 +9,12 @@ As a data engineer, was tasked to set up a data processing pipeline using Linux 
 
 ## Data_Pipeline file Structure
 .
-./README.md
-./preprocess.sh
-./.gitignore
-./input
-./input/sales_data.csv
-./monitor.sh
-./logs
-./logs/preprocess.log
-./output
-./output/cleaned_sale_data.csv
+├── input
+│   └── sales_data.csv
+├── logs
+│   └── preprocess.log
+├── monitor.sh
+├── output
+│   └── cleaned_sales_data.csv
+└── preprocess.sh
+
