@@ -1,0 +1,6 @@
+order_id,customer_name,region,order_date,amount,status,extra_col
+1001,John Doe,North,2025-01-12,250,Completed,xyz
+1002,Jane Smith,South,12/02/2025,400,Pending,abc
+1003,Mike Lee,East,2025-03-05,150,Failed,def
+1004,Susan Park,West,03-15-2025,600,Completed,ghi
+1005,Tom Brown,North,2025/04/01,200,Completed,jkl
