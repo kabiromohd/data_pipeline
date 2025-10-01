@@ -9,6 +9,7 @@ As a data engineer, was tasked to set up a data processing pipeline using Linux 
 
 ## Data_Pipeline file Structure
 .
+
 ├── input
 
 │   └── sales_data.csv
