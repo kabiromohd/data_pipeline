@@ -27,4 +27,10 @@ As a data engineer, was tasked to set up a data processing pipeline using Linux 
 └── preprocess.sh
 
 ## Cron Schedule for task
+
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4fcd5cfc-ad15-44c3-a9ac-0d180225dda1" />
+
+## Confirmation of schedule is Active
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/48279deb-31fb-4a14-888c-d8ae8957439d" />
+
