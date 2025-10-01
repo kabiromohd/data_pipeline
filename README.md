@@ -1,11 +1,15 @@
-# data_pipeline
-## DEC LaunchPad Linux Task
+# DEC LaunchPad data_pipeline Linux Task
 As a data engineer, was tasked to set up a data processing pipeline using Linux commands and bash scripts. This project would cover file manipulation, automation, permissions management, scheduling with cron, and logging.
 
 ## Create directories for organizing the pipeline:
 - ~/data_pipeline/input
 - ~/data_pipeline/output
 - ~/data_pipeline/logs
+
+## Permissions and Security
+- Adjust permissions to secure files and directories:
+- Set the input folder to be writable only by your user.
+- Restrict access to logs so only authorized users can read them.
 
 ## Data_Pipeline file Structure
 .
