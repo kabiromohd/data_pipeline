@@ -8,4 +8,14 @@ As a data engineer, was tasked to set up a data processing pipeline using Linux 
 - ~/data_pipeline/logs
 
 ## Data_Pipeline file Structure
-# data_pipeline
+.
+./README.md
+./preprocess.sh
+./.gitignore
+./input
+./input/sales_data.csv
+./monitor.sh
+./logs
+./logs/preprocess.log
+./output
+./output/cleaned_sale_data.csv
