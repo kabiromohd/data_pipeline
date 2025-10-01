@@ -18,6 +18,8 @@ As a data engineer, was tasked to set up a data processing pipeline using Linux 
 
 │   └── preprocess.log
 
+│   └── monitor_summary.log
+
 ├── monitor.sh
 
 ├── output
