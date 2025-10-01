@@ -1,0 +1,2 @@
+2025-09-29 19:19:48 - SUCCESS: CSV Data Downloaded file from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-09-29 19:19:48 - SUCCESS: Data Preprocessed /home/kabirolawalemohammed/data_pipeline/input/sales_data.csv -> /home/kabirolawalemohammed/data_pipeline/output/cleaned_sale_data.csv
