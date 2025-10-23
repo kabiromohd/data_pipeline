@@ -32,4 +32,5 @@ else
     echo "Download failed from $API_URL"
     echo "$(date '+%Y-%m-%d %H:%M:%S') - ERROR: CSV Data Download failed from $API_URL" >> "$LOG_FILE"
     exit 1
+chmod 755 "$INPUT_DIR"
 fi
