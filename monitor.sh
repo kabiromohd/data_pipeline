@@ -18,4 +18,6 @@ if [ -n "$ERRORS" ]; then
 else
     echo "No errors detected in logs."
     echo "$(date '+%Y-%m-%d %H:%M:%S') - No errors found" >> "$SUMMARY_LOG"
+chmod 640 "$LOG_DIR/preprocess.log"
+chmod 640 "$LOG_DIR/monitor_summary.log"
 fi
