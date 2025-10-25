@@ -10,14 +10,17 @@ LOG_DIR=$PIPELINE_DIR/logs
 OUTPUT_FILE=$OUTPUT_DIR/cleaned_sale_data.csv
 LOG_FILE=$LOG_DIR/preprocess.log
 
-# Create directories
-mkdir -p "$PIPELINE_DIR"
-mkdir -p "$INPUT_DIR" "$LOG_DIR" "$OUTPUT_DIR"
+# Create directories if they don't exist
+mkdir -p "$PIPELINE_DIR" "$INPUT_DIR" "$LOG_DIR" "$OUTPUT_DIR"
+
+# Start new log section with timestamp header
+RUN_START_TIME=$(date '+%Y-%m-%d %H:%M:%S')
+echo -e "\n==== $RUN_START_TIME Starting new run ====\n" | tee -a "$LOG_FILE"
 
 echo "Downloading sales data from API..."
 if wget "$API_URL" -q -O "$CSV_FILE"; then
     echo "Download successful. File saved to $CSV_FILE"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - SUCCESS: CSV Data Downloaded file from $API_URL" >> "$LOG_FILE"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - SUCCESS: CSV Data Downloaded file from $API_URL" | tee -a "$LOG_FILE" > /dev/null
 
     # Preprocess CSV: Remove rows with failed in the last column and drop the last column
     echo "Preprocessing data..."
@@ -27,10 +30,11 @@ if wget "$API_URL" -q -O "$CSV_FILE"; then
         print
     }' "$INPUT_FILE" > "$OUTPUT_FILE"
     echo "Preprocessing complete. Cleaned file saved at $OUTPUT_FILE"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - SUCCESS: Data Preprocessed $INPUT_FILE -> $OUTPUT_FILE" >> "$LOG_FILE"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - SUCCESS: Data Preprocessed $INPUT_FILE -> $OUTPUT_FILE" | tee -a "$LOG_FILE" > /dev/null
 else
     echo "Download failed from $API_URL"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERROR: CSV Data Download failed from $API_URL" >> "$LOG_FILE"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERROR: CSV Data Download failed from $API_URL" | tee -a "$LOG_FILE" > /dev/null
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Run aborted due to download error" | tee -a "$LOG_FILE" > /dev/null
     exit 1
 chmod 755 "$INPUT_DIR"
 fi
