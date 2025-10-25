@@ -7,16 +7,18 @@ SUMMARY_LOG=$LOG_DIR/monitor_summary.log
 # Create directory if it doesn't exist
 mkdir -p "$PIPELINE_DIR" "$LOG_DIR"
 
+# Start new log section with timestamp header
+RUN_START_TIME=$(date '+%Y-%m-%d %H:%M:%S')
+echo -e "\n==== $RUN_START_TIME Starting Monitoring ====\n" | tee -a "$SUMMARY_LOG"
+
 LAST_LOG=$(awk -v RS='' 'END{print}' "$LOG_FILE")
 
 # Check for errors in the last log section
 ERRORS=$(echo "$LAST_LOG" | grep -iE "ERROR|failed")
 
-# Check for errors in the preprocess log
-#ERRORS=$(grep -iE "ERROR|failed" $LOG_FILE)
-
 if [ -n "$ERRORS" ]; then
-    echo "Errors found in logs, see error details:"
+    echo "CHECKING LOGS FOR ERRORS IN LAST RUN..."
+    echo "ERRORS FOUND IN LOGS FOR LAST PREPROCESS RUNS..., SEE ERROR DETAILS:"
     echo "--------------------------------------------------"
     echo "$ERRORS"
     echo "$(date '+%Y-%m-%d %H:%M:%S') - ERRORS DETECTED IN LOG FILE!!!" | tee -a "$SUMMARY_LOG" > /dev/null

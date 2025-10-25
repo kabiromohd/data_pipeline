@@ -25,3 +25,18 @@
 2025-10-25 11:30:24 - ERRORS DETECTED IN LOG FILE!!!
 2025-10-25 11:30:02 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
 2025-10-25 11:30:02 - Run aborted due to download error
+2025-10-25 12:09:07 - ERRORS DETECTED IN LOG FILE!!!
+2025-10-25 12:08:58 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-10-25 12:08:58 - Run aborted due to download error
+2025-10-25 12:09:43 - ERRORS DETECTED IN LOG FILE!!!
+2025-10-25 12:08:58 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-10-25 12:08:58 - Run aborted due to download error
+2025-10-25 12:10:37 - ERRORS DETECTED IN LOG FILE!!!
+2025-10-25 12:08:58 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-10-25 12:08:58 - Run aborted due to download error
+
+==== 2025-10-25 12:26:54 Starting Monitoring ====
+
+2025-10-25 12:26:54 - ERRORS DETECTED IN LOG FILE!!!
+2025-10-25 12:26:48 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-10-25 12:26:48 - Run aborted due to download error

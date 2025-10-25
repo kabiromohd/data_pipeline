@@ -15,7 +15,7 @@ mkdir -p "$PIPELINE_DIR" "$INPUT_DIR" "$LOG_DIR" "$OUTPUT_DIR"
 
 # Start new log section with timestamp header
 RUN_START_TIME=$(date '+%Y-%m-%d %H:%M:%S')
-echo -e "\n==== $RUN_START_TIME Starting new run ====\n" | tee -a "$LOG_FILE"
+echo -e "\n==== $RUN_START_TIME Starting new preprocess run ====\n" | tee -a "$LOG_FILE"
 
 echo "Downloading sales data from API..."
 if wget "$API_URL" -q -O "$CSV_FILE"; then
