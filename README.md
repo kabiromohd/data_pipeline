@@ -6,6 +6,28 @@ As a data engineer, was tasked to set up a data processing pipeline using Linux 
 - ~/data_pipeline/output
 - ~/data_pipeline/logs
 
+## Data Ingestion and Preprocessing
+- Simulate data ingestion by copying the dataset (sales_data.csv) into ```~/data_pipeline/input/.```
+- Write a script preprocess.sh to clean and prepare the data files. The script should:
+- Removes the extra_col column (last column).
+- Filters out rows where status = Failed.
+- Saves the cleaned version of the file into ```~/data_pipeline/output/cleaned_sales_data.csv.```
+- Prints a success message and logs the action to ```~/data_pipeline/logs/preprocess.log.```
+- Make preprocess.sh executable
+
+## Automate the Pipeline with Cron Jobs
+- Set up a cron job to automate data processing.
+- Schedule preprocess.sh to run every day at midnight (12AM)
+- Confirm the cron job is active by listing the scheduled jobs on the server.
+
+## Logging and Monitoring
+- Redirect output and error logs to the logs folder to monitor the pipeline’s progress.
+- Write a monitor.sh script that checks for errors in the logs and notifies you if any are found.
+ ```This script should:```
+- Search for errors (e.g., "ERROR" or "failed") in log files.
+- If errors are found, print them to the terminal or write to a summary log.
+- Schedule this monitoring script to run after each daily processing job by adding it to cron (e.g., 12:05 AM).
+
 ## Permissions and Security
 - Adjust permissions to secure files and directories:
 - Set the input folder to be writable only by your user.
