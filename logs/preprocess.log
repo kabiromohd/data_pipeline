@@ -29,3 +29,33 @@
 
 2025-10-25 12:26:48 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
 2025-10-25 12:26:48 - Run aborted due to download error
+
+==== 2025-10-26 11:37:03 Starting new preprocess run ====
+
+2025-10-26 11:37:03 - Downloading sales data from API...
+2025-10-26 11:37:04 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-10-26 11:37:04 - Run aborted due to download error
+
+==== 2025-10-26 11:37:31 Starting new preprocess run ====
+
+2025-10-26 11:37:31 - Downloading sales data from API...
+2025-10-26 11:37:32 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-10-26 11:37:32 - Run aborted due to download error
+
+==== 2025-10-26 11:39:36 Starting new preprocess run ====
+
+2025-10-26 11:39:36 - Downloading sales data from API...
+2025-10-26 11:39:37 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-10-26 11:39:37 - Run aborted due to download error
+
+==== 2025-10-26 11:44:11 Starting new preprocess run ====
+
+2025-10-26 11:44:11 - Downloading sales data from API...
+2025-10-26 11:44:12 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-10-26 11:44:12 - Run aborted due to download error
+
+==== 2025-10-26 11:45:08 Starting new preprocess run ====
+
+2025-10-26 11:45:08 - Downloading sales data from API...
+2025-10-26 11:45:08 - ERROR: CSV Data Download failed from https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv
+2025-10-26 11:45:08 - Preprocessing Run aborted due to download error

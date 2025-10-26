@@ -17,14 +17,14 @@ LAST_LOG=$(awk -v RS='' 'END{print}' "$LOG_FILE")
 ERRORS=$(echo "$LAST_LOG" | grep -iE "ERROR|failed")
 
 if [ -n "$ERRORS" ]; then
+    echo "--------------------------------------------------------------------"
     echo "CHECKING LOGS FOR ERRORS IN LAST RUN..."
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERRORS DETECTED IN LOG FILE!!!" | tee -a "$SUMMARY_LOG"
     echo "ERRORS FOUND IN LOGS FOR LAST PREPROCESS RUNS..., SEE ERROR DETAILS:"
-    echo "--------------------------------------------------"
-    echo "$ERRORS"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERRORS DETECTED IN LOG FILE!!!" | tee -a "$SUMMARY_LOG" > /dev/null
+    echo "--------------------------------------------------------------------"
+    echo "$ERRORS" 
     echo "$ERRORS" >> "$SUMMARY_LOG"
 else
-    echo "No errors detected in logs."
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - No errors found in Log file" | tee -a "$SUMMARY_LOG" > /dev/null
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - No errors found in Log file" | tee -a "$SUMMARY_LOG"
 chmod 640 "$LOG_DIR/preprocess.log" "$LOG_DIR/monitor_summary.log"
 fi

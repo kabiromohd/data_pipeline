@@ -16,25 +16,22 @@ mkdir -p "$PIPELINE_DIR" "$INPUT_DIR" "$LOG_DIR" "$OUTPUT_DIR"
 # Start new log section with timestamp header
 RUN_START_TIME=$(date '+%Y-%m-%d %H:%M:%S')
 echo -e "\n==== $RUN_START_TIME Starting new preprocess run ====\n" | tee -a "$LOG_FILE"
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Downloading sales data from API..." | tee -a "$LOG_FILE"
 
-echo "Downloading sales data from API..."
 if wget "$API_URL" -q -O "$CSV_FILE"; then
-    echo "Download successful. File saved to $CSV_FILE"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - SUCCESS: CSV Data Downloaded file from $API_URL" | tee -a "$LOG_FILE" > /dev/null
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - SUCCESS: CSV Data Downloaded file from $API_URL" | tee -a "$LOG_FILE"
 
     # Preprocess CSV: Remove rows with failed in the last column and drop the last column
-    echo "Preprocessing data..."
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Starting Preprocessing of $INPUT_FILE" | tee -a "$LOG_FILE"
     awk 'BEGIN{FS=OFS=","} {
     NF--;
     if (NR==1 || tolower($NF) != "failed")
         print
     }' "$INPUT_FILE" > "$OUTPUT_FILE"
-    echo "Preprocessing complete. Cleaned file saved at $OUTPUT_FILE"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - SUCCESS: Data Preprocessed $INPUT_FILE -> $OUTPUT_FILE" | tee -a "$LOG_FILE" > /dev/null
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - SUCCESS: Preprocessing complete. Cleaned file saved at $OUTPUT_FILE" | tee -a "$LOG_FILE"
 else
-    echo "Download failed from $API_URL"
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERROR: CSV Data Download failed from $API_URL" | tee -a "$LOG_FILE" > /dev/null
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - Run aborted due to download error" | tee -a "$LOG_FILE" > /dev/null
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERROR: CSV Data Download failed from $API_URL" | tee -a "$LOG_FILE"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Preprocessing Run aborted due to download error" | tee -a "$LOG_FILE"
     exit 1
 chmod 755 "$INPUT_DIR"
 fi
