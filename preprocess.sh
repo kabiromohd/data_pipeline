@@ -3,7 +3,11 @@
 PIPELINE_DIR=~/data_pipeline
 INPUT_DIR=$PIPELINE_DIR/input
 OUTPUT_DIR=$PIPELINE_DIR/output
-API_URL="https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv"
+# API url for sales data
+# Uncomment the line below to use the original API URL
+#API_URL="https://raw.githubusercontent.com/dataengineering-community/launchpad/refs/heads/main/Linux/sales_data.csv"
+API_URL="https://raw.githubusercontent.com/kabirmohdo/launchpad/main/Linux/sales_data.csv"
+
 CSV_FILE="$INPUT_DIR/sales_data.csv"
 INPUT_FILE=$INPUT_DIR/sales_data.csv
 LOG_DIR=$PIPELINE_DIR/logs
